@@ -1,6 +1,10 @@
 #ifndef KALMAN_FILTER_H_
 #define KALMAN_FILTER_H_
 #include "Eigen/Dense"
+#include <vector>
+#include <string>
+#include <fstream>
+#include <iostream>
 
 class KalmanFilter {
 public:

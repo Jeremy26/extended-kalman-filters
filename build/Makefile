@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/Cellar/cmake/3.9.3_1/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/Cellar/cmake/3.9.3_1/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named extended-kalman-filters
+# Target rules for targets named ExtendedKF
 
 # Build rule for target.
-extended-kalman-filters: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 extended-kalman-filters
-.PHONY : extended-kalman-filters
+ExtendedKF: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExtendedKF
+.PHONY : ExtendedKF
 
 # fast build rule for target.
-extended-kalman-filters/fast:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/build
-.PHONY : extended-kalman-filters/fast
+ExtendedKF/fast:
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/build
+.PHONY : ExtendedKF/fast
 
 FusionEKF.o: FusionEKF.cpp.o
 
@@ -129,7 +129,7 @@ FusionEKF.o: FusionEKF.cpp.o
 
 # target to build an object file
 FusionEKF.cpp.o:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/FusionEKF.cpp.o
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/FusionEKF.cpp.o
 .PHONY : FusionEKF.cpp.o
 
 FusionEKF.i: FusionEKF.cpp.i
@@ -138,7 +138,7 @@ FusionEKF.i: FusionEKF.cpp.i
 
 # target to preprocess a source file
 FusionEKF.cpp.i:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/FusionEKF.cpp.i
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/FusionEKF.cpp.i
 .PHONY : FusionEKF.cpp.i
 
 FusionEKF.s: FusionEKF.cpp.s
@@ -147,7 +147,7 @@ FusionEKF.s: FusionEKF.cpp.s
 
 # target to generate assembly for a file
 FusionEKF.cpp.s:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/FusionEKF.cpp.s
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/FusionEKF.cpp.s
 .PHONY : FusionEKF.cpp.s
 
 kalman_filter.o: kalman_filter.cpp.o
@@ -156,7 +156,7 @@ kalman_filter.o: kalman_filter.cpp.o
 
 # target to build an object file
 kalman_filter.cpp.o:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/kalman_filter.cpp.o
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/kalman_filter.cpp.o
 .PHONY : kalman_filter.cpp.o
 
 kalman_filter.i: kalman_filter.cpp.i
@@ -165,7 +165,7 @@ kalman_filter.i: kalman_filter.cpp.i
 
 # target to preprocess a source file
 kalman_filter.cpp.i:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/kalman_filter.cpp.i
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/kalman_filter.cpp.i
 .PHONY : kalman_filter.cpp.i
 
 kalman_filter.s: kalman_filter.cpp.s
@@ -174,7 +174,7 @@ kalman_filter.s: kalman_filter.cpp.s
 
 # target to generate assembly for a file
 kalman_filter.cpp.s:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/kalman_filter.cpp.s
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/kalman_filter.cpp.s
 .PHONY : kalman_filter.cpp.s
 
 main.o: main.cpp.o
@@ -183,7 +183,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -192,7 +192,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -201,7 +201,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 tools.o: tools.cpp.o
@@ -210,7 +210,7 @@ tools.o: tools.cpp.o
 
 # target to build an object file
 tools.cpp.o:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/tools.cpp.o
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/tools.cpp.o
 .PHONY : tools.cpp.o
 
 tools.i: tools.cpp.i
@@ -219,7 +219,7 @@ tools.i: tools.cpp.i
 
 # target to preprocess a source file
 tools.cpp.i:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/tools.cpp.i
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/tools.cpp.i
 .PHONY : tools.cpp.i
 
 tools.s: tools.cpp.s
@@ -228,7 +228,7 @@ tools.s: tools.cpp.s
 
 # target to generate assembly for a file
 tools.cpp.s:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/tools.cpp.s
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/tools.cpp.s
 .PHONY : tools.cpp.s
 
 # Help Target
@@ -239,7 +239,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... extended-kalman-filters"
+	@echo "... ExtendedKF"
 	@echo "... FusionEKF.o"
 	@echo "... FusionEKF.i"
 	@echo "... FusionEKF.s"

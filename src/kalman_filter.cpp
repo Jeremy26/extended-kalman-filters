@@ -2,6 +2,8 @@
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
+using namespace std;
+using std::vector;
 
 KalmanFilter::KalmanFilter() {}
 
@@ -47,8 +49,6 @@ void KalmanFilter::Update(const VectorXd &z) {
   P_ = (I - K * H_) * P_;
 }
 
-
-
 void KalmanFilter::UpdateEKF(const VectorXd &z) {
   /**
   TODO:
@@ -59,11 +59,28 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   float vx = x_[2];
   float vy = x_[3];
   float rho = sqrt(pow(px,2)+pow(py,2));
-  float phi = atan(py/px);
-  float rhodot = ((px*vx)+(py*vy))/sqrt(pow(px,2)+pow(py,2));
+  float phi = atan2(py,px);
+  float rhodot;
+
+  //Avoid Division by 0
+  if (fabs(rho) < 0.0001) {
+    rhodot = 0;
+  } 
+  else rhodot = (vx*px + vy*py)/rho;
+
   VectorXd z_pred (3);
   z_pred << rho, phi, rhodot;
   VectorXd y = z - z_pred;
+
+//Normalisation of the angles so y[1] always stays between -Pi and +Pi
+    while (y[1] > M_PI){
+       y[1] -= 2 * M_PI;
+    }
+    while (y[1] < - M_PI){
+       y[1] += 2 * M_PI;
+    }
+  
+ // y[1] = atan2(sin(y[1]), cos(y[1])); 
   MatrixXd Ht = H_.transpose();
   MatrixXd S = H_ * P_ * Ht + R_;
   MatrixXd Si = S.inverse();

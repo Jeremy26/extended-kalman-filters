@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /Users/jeremycohen/SelfDrivingCar/extended-kalman-filters/src
 CMAKE_BINARY_DIR = /Users/jeremycohen/SelfDrivingCar/extended-kalman-filters/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/extended-kalman-filters.dir
+# Target rules for target CMakeFiles/ExtendedKF.dir
 
 # All Build rule for target.
-CMakeFiles/extended-kalman-filters.dir/all:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/depend
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/jeremycohen/SelfDrivingCar/extended-kalman-filters/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target extended-kalman-filters"
-.PHONY : CMakeFiles/extended-kalman-filters.dir/all
+CMakeFiles/ExtendedKF.dir/all:
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/depend
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/jeremycohen/SelfDrivingCar/extended-kalman-filters/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target ExtendedKF"
+.PHONY : CMakeFiles/ExtendedKF.dir/all
 
 # Include target in all.
-all: CMakeFiles/extended-kalman-filters.dir/all
+all: CMakeFiles/ExtendedKF.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/extended-kalman-filters.dir/rule: cmake_check_build_system
+CMakeFiles/ExtendedKF.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jeremycohen/SelfDrivingCar/extended-kalman-filters/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/extended-kalman-filters.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ExtendedKF.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jeremycohen/SelfDrivingCar/extended-kalman-filters/build/CMakeFiles 0
-.PHONY : CMakeFiles/extended-kalman-filters.dir/rule
+.PHONY : CMakeFiles/ExtendedKF.dir/rule
 
 # Convenience name for target.
-extended-kalman-filters: CMakeFiles/extended-kalman-filters.dir/rule
+ExtendedKF: CMakeFiles/ExtendedKF.dir/rule
 
-.PHONY : extended-kalman-filters
-
-# clean rule for target.
-CMakeFiles/extended-kalman-filters.dir/clean:
-	$(MAKE) -f CMakeFiles/extended-kalman-filters.dir/build.make CMakeFiles/extended-kalman-filters.dir/clean
-.PHONY : CMakeFiles/extended-kalman-filters.dir/clean
+.PHONY : ExtendedKF
 
 # clean rule for target.
-clean: CMakeFiles/extended-kalman-filters.dir/clean
+CMakeFiles/ExtendedKF.dir/clean:
+	$(MAKE) -f CMakeFiles/ExtendedKF.dir/build.make CMakeFiles/ExtendedKF.dir/clean
+.PHONY : CMakeFiles/ExtendedKF.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ExtendedKF.dir/clean
 
 .PHONY : clean
 
