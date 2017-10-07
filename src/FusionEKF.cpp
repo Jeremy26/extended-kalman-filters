@@ -38,7 +38,7 @@ FusionEKF::FusionEKF() {
   */
 
     H_laser_ << 1, 0, 0, 0,
-                0, 1, 0, 1;
+                0, 1, 0, 0;
     
     Hj_ << 1, 1, 0, 0,
          1, 1, 0, 0,
@@ -84,11 +84,11 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     // first measurement
  //   cout << "EKF: " << endl;
     ekf_.x_ = VectorXd(4);
-   // ekf_.x_ << 0.3122427,0.5803398,5.199937,0;
+    ekf_.x_ << 0.3122427,0.5803398,5.199937,0;
   //  ekf_.x_ << 0.6,0.6,5.199937,0;
   //  ekf_.x_ << 0.3122427,0.5803398,0,0;
  //   ekf_.x_ <<0,0,0,0;
-    ekf_.x_ <<1,1,1,1;
+    //ekf_.x_ <<1,1,1,1;
  //set the process covariance matrix Q
     ekf_.Q_ = MatrixXd(4, 4);
 
@@ -105,7 +105,8 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       /**
       Initialize state.
       */
-      ekf_.x_ << measurement_pack.raw_measurements_(0), measurement_pack.raw_measurements_(1),0,0;
+      ekf_.x_ [0] = measurement_pack.raw_measurements_(0);
+      ekf_.x_ [1] =measurement_pack.raw_measurements_(1);
     }
     previous_timestamp_ = measurement_pack.timestamp_;
 
