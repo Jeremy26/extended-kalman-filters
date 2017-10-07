@@ -1,5 +1,16 @@
 # Extended Kalman Filter Project Starter Code
 Self-Driving Car Engineer Nanodegree Program
+-------------------------------------------------------
+[//]: # (Image References)
+
+[image0]: /Docs/Final.png "Final"
+
+![finalimage][image0]
+In this file, you can see the implementation of a Kalman Filter in C++. The Kalman filter uses Radar (blue) and Lidar(red) measurements (sensor) to track the moving blue vehicle. Every times it gets a measurement either from Radar or Lidar, it predicts the next one and then updates its estimation using a new measurement.
+* Final RMSE (Root Mean Squared Error) : Px : 0.0945; Py: 0.0848 ; Vx:0.3305; Vy:0.4097.
+* Using Radar Only : Px : 0.2229; Py: 0.3454 ; Vx:0.5235; Vy:0.7661
+* Using Ladar Only : Px : 0.1459; Py: 0.1153 ; Vx:0.5569; Vy:0.5346
+-------------------------------------------------------
 
 In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
 
