@@ -2,7 +2,7 @@
 Self-Driving Car Engineer Nanodegree Program -- Extended Kalman Filters
 -------------------------------------------------------
 ### Video
-[![video](/Docs/Final.png)](https://youtu.be/uOqug8DPCIs "Extended KF")
+[![video](/Docs/result_ekf.png)](https://youtu.be/uOqug8DPCIs "Extended KF")
 
 ### Explanation
 In this file, you can see the implementation of a Kalman Filter in C++. The Kalman filter uses Radar (blue) and Lidar(red) measurements (sensor) to track the moving blue vehicle and predict its future positions and velocity (green triangle). Every times it gets a measurement either from Radar or Lidar, it predicts the next one and then updates its estimation using a new measurement.
